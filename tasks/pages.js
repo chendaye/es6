@@ -4,7 +4,7 @@ import gulp from 'gulp';
 // gulp语句做if判断的包
 import gulpif from 'gulp-if';
 // 热更新 修改之后自动更新
-import liereload from 'gulp-livereload';
+import livereload from 'gulp-livereload';
 // 对命令行参数进行解析的包（已经自定义好）
 import args from './util/args';
 
