@@ -1,0 +1,59 @@
+Es6项目构建
+
+基础架构
+
+    业务逻辑            自动构建                                                服务接口
+
+页面        交互    编译        辅助                                       数据           接口
+
+                          自动刷新  文件合并  资源压缩
+
+
+任务自动化（gulp）
+
+    什么是任务自动化：让电脑监听所有的操作，并自动响应
+
+    什么是gulp：一个工具  自动化构建工具（二进制流的方式操作文件）
+
+    gulp的作用： 完成任务自动化（基于node开发， 用各种插件完成各种任务） 用不同task的组合完成复杂的任务
+
+    使用gulp实现自动化任务： gulp中文网
+
+
+
+
+编译工具（babel webpack）
+  babel： js 的编译器  es6不能直接在浏览器中运行 需要编译
+  webpack: 解决模块化的工具
+  webpack-stream: webpack 对 gulp的支持
+
+
+
+
+代码实现
+  完成目录结构
+    app： 项目文件
+
+    server： 服务器代码
+
+    tasks: 自动构建脚本
+
+    .babelrc 文件 babel编译需要的文件
+    gulpfile.babel.js   gulp 配置文件（因为使用了es6  所以是 bable.js）
+
+  自动构建
+
+  tasks/util/arg.js  脚本：  创建 gulp 参数
+  tasks/scripts.js   脚本：  处理js的脚本  打开文件->错误处理->重命名->编译->编译文件放入指定文件夹->重命名->压缩->压缩文件放入指定文件夹->热更新
+  tasks/pages.js     脚本：  处理模板   打开app的模板文件  把模板文件放到server  热更新
+  tasks/css.js       脚本：  处理css   同处理模板文件一样  拷贝 热更新
+  tasks/server.js    脚本：  处理服务器的脚本
+  task/browser.js    脚本：  处理浏览器监听 监听app目录的变化  自动调用 对应脚本处理任务  （自动调用  screpts.js  pages.js  css.js  针对app相应文件做对应处理）
+  tasks/clead.js     脚本：  因为每次app的文件变化都要重新拷贝到server目录 所以开呗之前要先清空server中旧的拷贝文件
+
+  tasks/build.js     脚本：  用各个脚本构建任务
+  task/default.js    脚本：  创建gulp默认执行的脚本（任务）
+
+  服务器搭建
+  要实现热更新 要修改 server/app.js  在特定位置加一个 热更新
+  启动 gulp --watch
