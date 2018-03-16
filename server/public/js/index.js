@@ -63,6 +63,18 @@
 
 	__webpack_require__(332);
 
+	__webpack_require__(333);
+
+	__webpack_require__(334);
+
+	__webpack_require__(335);
+
+	__webpack_require__(336);
+
+	__webpack_require__(337);
+
+	__webpack_require__(338);
+
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
@@ -9488,6 +9500,11 @@
 
 	'use strict';
 
+	var _templateObject = _taggedTemplateLiteral(['i am ', ' i want to say ', ''], ['i am ', ' i want to say ', '']),
+	    _templateObject2 = _taggedTemplateLiteral(['Hi\n', ''], ['Hi\\n', '']);
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 	// 有些函数 需要兼容es7 要安装 babel-polyfill
 
 	{
@@ -9560,6 +9577,758 @@
 	      }
 	    }
 	  }
+	}
+
+	{
+	  var string = 'string';
+
+	  // 包含
+	  console.log('include', string.includes('t'));
+
+	  // 起始
+	  console.log('start', string.startsWith('g'));
+
+	  // 结束
+	  console.log('end', string.endsWith('ng'));
+	}
+
+	{
+	  var _str = 'abc';
+	  // 复制字符串
+	  console.log(_str.repeat(10));
+	}
+
+	{
+	  // 模板字符串
+
+	  var name = 'chendaye666';
+	  var say = 'hellow word';
+
+	  // 模板字符串用反引号
+	  var model = 'i\'am is ' + name + ', i want to say ' + say;
+	  console.log(model);
+	}
+
+	{
+	  // 补白
+	  console.log('1'.padStart(2, '0')); // '01'
+	  console.log('1'.padEnd(2, '0')); // '10'
+	}
+
+	{
+	  var abc = function abc(a, b, c) {
+	    console.log(a); // Array [ "i am ", " i want to say ", "" ]
+	    console.log(b); // chendaye666
+	    console.log(c); // hellow word
+	    return a + b + c;
+	  };
+
+	  var user = {
+	    name: 'chendaye666',
+	    say: 'hellow word'
+	  };
+
+	  var ret = abc(_templateObject, user.name, user.say);
+
+	  console.log(ret); // i am , i want to say ,chendaye666hellow word
+	}
+
+	{
+	  console.log(String.raw(_templateObject2, 1 + 2)); // Hi\n3  raw 会自动转义特殊字符
+	  console.log('Hi\n' + (1 + 2));
+	}
+
+/***/ }),
+/* 333 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	{
+	  // 二进制
+	  console.log(111);
+
+	  // 8禁止
+	  console.log(501);
+	}
+
+	{
+	  // 是否是有界数值
+	  console.log('15', Number.isFinite(15));
+	  console.log('NaN', Number.isFinite(NaN));
+	  console.log('1/0', Number.isFinite(1 / 0));
+
+	  // 是否是非数字
+	  console.log('NaN', Number.isNaN(NaN));
+	}
+
+	{
+	  // 判断是否是整数
+	  console.log(Number.isInteger(25));
+	  console.log(Number.isInteger(25.0));
+	}
+
+	{
+	  // 判断数是否在有效的区间
+
+	  console.log(Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER);
+
+	  // 判断数是否在安全范围内
+	  console.log(Number.isSafeInteger(10));
+	}
+
+	{
+	  // 取整数部分
+
+	  console.log(Math.trunc(42.13));
+	}
+
+	{
+	  // 判断正数  负数 零
+	  console.log(Math.sign(-7)); // -1
+	  console.log(Math.sign(0)); // 0
+	  console.log(Math.sign(7)); // 1
+	  console.log(Math.sign('5')); //1
+	  console.log(Math.sign('nnn')); // NaN
+	}
+
+	{
+	  // 立方根
+	  console.log(Math.cbrt(-1));
+
+	  console.log(Math.cbrt(64));
+	}
+
+/***/ }),
+/* 334 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+	{
+	  // 创建一个类型的数组
+	  var arr = Array.of(1, 2, 3, 4, 5);
+
+	  console.log(arr);
+	}
+
+	{
+	  var p = document.querySelectorAll('p');
+
+	  // 集合转义成数组
+	  var _arr = Array.from(p);
+
+	  _arr.forEach(function (item) {
+	    console.log(item.textContent);
+	  });
+
+	  // 遍历
+	  console.log(Array.from([1, 3, 5], function (item) {
+	    return item + 100;
+	  }));
+	}
+
+	{
+	  // 数组元素全部替换为7
+	  console.log([1, 'a', 'fff'].fill(7));
+
+	  // 指定替换的起始位置和 替换的长度
+	  console.log([1, 'a', 'fff'].fill(7, 1, 2));
+	}
+
+	{
+	  // keys() values() 方法需要兼容 es7 要引入 babel-polyfill
+	  var _iteratorNormalCompletion = true;
+	  var _didIteratorError = false;
+	  var _iteratorError = undefined;
+
+	  try {
+	    for (var _iterator = [1, 'sd', 78].keys()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	      var key = _step.value;
+
+	      console.log('取键值', key);
+	    }
+	  } catch (err) {
+	    _didIteratorError = true;
+	    _iteratorError = err;
+	  } finally {
+	    try {
+	      if (!_iteratorNormalCompletion && _iterator.return) {
+	        _iterator.return();
+	      }
+	    } finally {
+	      if (_didIteratorError) {
+	        throw _iteratorError;
+	      }
+	    }
+	  }
+
+	  var _iteratorNormalCompletion2 = true;
+	  var _didIteratorError2 = false;
+	  var _iteratorError2 = undefined;
+
+	  try {
+	    for (var _iterator2 = [1, 'sd', 78].values()[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+	      var val = _step2.value;
+
+	      console.log('取值', val);
+	    }
+	  } catch (err) {
+	    _didIteratorError2 = true;
+	    _iteratorError2 = err;
+	  } finally {
+	    try {
+	      if (!_iteratorNormalCompletion2 && _iterator2.return) {
+	        _iterator2.return();
+	      }
+	    } finally {
+	      if (_didIteratorError2) {
+	        throw _iteratorError2;
+	      }
+	    }
+	  }
+
+	  var _iteratorNormalCompletion3 = true;
+	  var _didIteratorError3 = false;
+	  var _iteratorError3 = undefined;
+
+	  try {
+	    for (var _iterator3 = [1, 'sd', 78].entries()[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+	      var _step3$value = _slicedToArray(_step3.value, 2),
+	          k = _step3$value[0],
+	          v = _step3$value[1];
+
+	      console.log('取键', k);
+	      console.log('取值', v);
+	    }
+	  } catch (err) {
+	    _didIteratorError3 = true;
+	    _iteratorError3 = err;
+	  } finally {
+	    try {
+	      if (!_iteratorNormalCompletion3 && _iterator3.return) {
+	        _iterator3.return();
+	      }
+	    } finally {
+	      if (_didIteratorError3) {
+	        throw _iteratorError3;
+	      }
+	    }
+	  }
+	}
+
+	{
+	  // 替换 第一个参数  表示要替换的位置  后两个参数分别是要替换位置的起始和结尾
+	  console.log([1, 2, 3, 4, 5, 6].copyWithin(0, 3, 5));
+	}
+
+	{
+	  // 查找  返回找到的第一个
+	  console.log([1, 2, 3, 4, 5, 6].find(function (item) {
+	    return item > 4;
+	  }));
+
+	  console.log([1, 2, 3, 4, 5, 6].findIndex(function (item) {
+	    return item > 4;
+	  }));
+	}
+
+	{
+	  // 是否包含
+	  console.log([1, 2, NaN].includes(NaN));
+	}
+
+/***/ }),
+/* 335 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	{
+	  // 函数默认值
+	  var test = function test(x) {
+	    var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'word';
+
+	    console.log(x, y);
+	  };
+
+	  test('hello');
+	  test('hello', 'fuck jun');
+	}
+
+	{
+
+	  // let 在函数外面声明的变量 会被函数括号里声明的变量覆盖
+	  var test1 = function test1(var1) {
+	    var tmp = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : var1;
+
+	    console.log(tmp);
+	  };
+
+	  // 作用域
+	  var var1 = 666;
+
+	  test1(777);
+	}
+
+	{
+	  var _test = function _test() {
+	    for (var _len = arguments.length, arg = Array(_len), _key = 0; _key < _len; _key++) {
+	      arg[_key] = arguments[_key];
+	    }
+
+	    var _iteratorNormalCompletion = true;
+	    var _didIteratorError = false;
+	    var _iteratorError = undefined;
+
+	    try {
+	      for (var _iterator = arg[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	        var v = _step.value;
+
+	        console.log(v);
+	      }
+	    } catch (err) {
+	      _didIteratorError = true;
+	      _iteratorError = err;
+	    } finally {
+	      try {
+	        if (!_iteratorNormalCompletion && _iterator.return) {
+	          _iterator.return();
+	        }
+	      } finally {
+	        if (_didIteratorError) {
+	          throw _iteratorError;
+	        }
+	      }
+	    }
+	  };
+
+	  _test(1, 2, 'dsf');
+	}
+
+	{
+	  var _console, _console2;
+
+	  // 数组转成离散值
+	  (_console = console).log.apply(_console, [1, 2, 3]);
+	  (_console2 = console).log.apply(_console2, ['aaa'].concat([1, 2, 3]));
+	}
+
+	{
+	  // 箭头函数
+	  var functioin_name = function functioin_name(param) {
+	    return param - 5;
+	  }; // 有参数的情形
+
+	  console.log(functioin_name(222));
+
+	  var function_name2 = function function_name2() {
+	    return 777;
+	  };
+
+	  console.log(function_name2()); // 没有参数的情形
+	}
+
+	{
+	  // 尾调用
+	  var fun1 = function fun1(x) {
+	    console.log(x);
+	  };
+
+	  var fun2 = function fun2(x) {
+	    return fun1(x);
+	  };
+
+	  fun2(777);
+	}
+
+/***/ }),
+/* 336 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	{
+	  var m = 1;
+	  var n = 2;
+
+	  // 两种写法等同
+	  var es5 = {
+	    m: m,
+	    n: n
+	  };
+
+	  var es6 = {
+	    m: m,
+	    n: n
+	  };
+
+	  console.log(es5, es6);
+
+	  var es5_m = {
+	    fun: function fun() {
+	      console.log('es5_m');
+	    }
+	  };
+
+	  var es6_m = {
+	    fun: function fun() {
+	      console.log('es6_m');
+	    }
+	  };
+
+	  es5_m.fun();
+	  es6_m.fun();
+	}
+
+	{
+	  var a = 1;
+	  var b = 2;
+	  var _es = {
+	    a: a,
+	    b: b
+	  };
+
+	  // es6 中属性的键可以是表达式
+	  var _es2 = _defineProperty({}, a, 777);
+
+	  console.log(_es, _es2);
+	}
+
+	{
+	  // 新增api
+	  // 判断是否相等
+	  console.log(Object.is('aaa', 'aaa'), 'aaa' === 'aaa');
+	  console.log(Object.is([], []), [] === []);
+
+	  // 键和值的遍历
+	  var obj = {
+	    a: 1,
+	    b: 7
+	  };
+
+	  var _iteratorNormalCompletion = true;
+	  var _didIteratorError = false;
+	  var _iteratorError = undefined;
+
+	  try {
+	    for (var _iterator = Object.entries(obj)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	      var _step$value = _slicedToArray(_step.value, 2),
+	          k = _step$value[0],
+	          v = _step$value[1];
+
+	      console.log(k, v);
+	    }
+	  } catch (err) {
+	    _didIteratorError = true;
+	    _iteratorError = err;
+	  } finally {
+	    try {
+	      if (!_iteratorNormalCompletion && _iterator.return) {
+	        _iterator.return();
+	      }
+	    } finally {
+	      if (_didIteratorError) {
+	        throw _iteratorError;
+	      }
+	    }
+	  }
+	}
+
+/***/ }),
+/* 337 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	{
+	  // 声明独一无二的值
+	  var a = Symbol();
+	  var b = Symbol();
+
+	  console.log(a === b);
+
+	  // 指定一个配值
+	  var c = Symbol.for('ww');
+	  var d = Symbol.for('ww');
+	  var e = Symbol.for('rr');
+	  console.log(c);
+	  console.log(d);
+
+	  console.log(c === d); //true
+	  console.log(d === e); //false
+	}
+
+	{
+	  var _obj;
+
+	  var k = Symbol.for('qwer');
+
+	  // 创建唯一值 避免属性名重复
+	  var obj = (_obj = {}, _defineProperty(_obj, k, 132), _defineProperty(_obj, 'qwer', 777), _defineProperty(_obj, 'df', 798), _obj);
+
+	  console.log(obj);
+
+	  // for 取不到 Symbol 属性
+	  var _iteratorNormalCompletion = true;
+	  var _didIteratorError = false;
+	  var _iteratorError = undefined;
+
+	  try {
+	    for (var _iterator = Object.entries(obj)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	      var _step$value = _slicedToArray(_step.value, 2),
+	          key = _step$value[0],
+	          val = _step$value[1];
+
+	      console.log(key, val);
+	    }
+
+	    //只能取到 Symbol的值
+	  } catch (err) {
+	    _didIteratorError = true;
+	    _iteratorError = err;
+	  } finally {
+	    try {
+	      if (!_iteratorNormalCompletion && _iterator.return) {
+	        _iterator.return();
+	      }
+	    } finally {
+	      if (_didIteratorError) {
+	        throw _iteratorError;
+	      }
+	    }
+	  }
+
+	  Object.getOwnPropertySymbols(obj).forEach(function (item) {
+	    console.log(obj[item]);
+	  });
+
+	  // 两者都取到
+	  Reflect.ownKeys(obj).forEach(function (item) {
+	    console.log(obj[item]);
+	  });
+	}
+
+/***/ }),
+/* 338 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+	// set数据类型
+
+	{
+	  var list = new Set();
+	  list.add(8);
+	  list.add(80);
+
+	  console.log(list.size);
+
+	  // 也可以直接初始化
+	  var arr = [1, 2, 3, 4, 5];
+	  var list1 = new Set(arr);
+
+	  console.log(list1.size);
+	}
+
+	{
+	  // set 里不能有重复元素
+
+	  var _list = new Set();
+
+	  _list.add(7);
+	  _list.add(8);
+	  _list.add(8); // 重复元素添加不成功
+
+	  console.log(_list.size);
+
+	  // 利用此特性去重
+
+	  var _arr = [1, 1, 2, 2, 3, 3];
+
+	  var _list2 = new Set(_arr);
+
+	  console.log(_list2);
+	}
+
+	{
+	  // 几个方法
+
+	  var method = ['add', 'delete', 'has', 'clear'];
+
+	  var _list3 = new Set(method);
+
+	  _list3.add(777);
+
+	  _list3.delete('delete');
+
+	  console.log(_list3, _list3.has('list'));
+
+	  _list3.clear();
+	  console.log(_list3);
+	}
+
+	{
+	  var _method = ['add', 'delete', 'has', 'clear'];
+
+	  var _list4 = new Set(_method);
+
+	  var _iteratorNormalCompletion = true;
+	  var _didIteratorError = false;
+	  var _iteratorError = undefined;
+
+	  try {
+	    for (var _iterator = _list4.keys()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	      var key = _step.value;
+
+	      console.log('key', key);
+	    }
+	  } catch (err) {
+	    _didIteratorError = true;
+	    _iteratorError = err;
+	  } finally {
+	    try {
+	      if (!_iteratorNormalCompletion && _iterator.return) {
+	        _iterator.return();
+	      }
+	    } finally {
+	      if (_didIteratorError) {
+	        throw _iteratorError;
+	      }
+	    }
+	  }
+
+	  var _iteratorNormalCompletion2 = true;
+	  var _didIteratorError2 = false;
+	  var _iteratorError2 = undefined;
+
+	  try {
+	    for (var _iterator2 = _list4.values()[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+	      var val = _step2.value;
+
+	      console.log('val', val);
+	    }
+	  } catch (err) {
+	    _didIteratorError2 = true;
+	    _iteratorError2 = err;
+	  } finally {
+	    try {
+	      if (!_iteratorNormalCompletion2 && _iterator2.return) {
+	        _iterator2.return();
+	      }
+	    } finally {
+	      if (_didIteratorError2) {
+	        throw _iteratorError2;
+	      }
+	    }
+	  }
+
+	  var _iteratorNormalCompletion3 = true;
+	  var _didIteratorError3 = false;
+	  var _iteratorError3 = undefined;
+
+	  try {
+	    for (var _iterator3 = _list4[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+	      var li = _step3.value;
+
+	      console.log('list', li);
+	    }
+	  } catch (err) {
+	    _didIteratorError3 = true;
+	    _iteratorError3 = err;
+	  } finally {
+	    try {
+	      if (!_iteratorNormalCompletion3 && _iterator3.return) {
+	        _iterator3.return();
+	      }
+	    } finally {
+	      if (_didIteratorError3) {
+	        throw _iteratorError3;
+	      }
+	    }
+	  }
+
+	  var _iteratorNormalCompletion4 = true;
+	  var _didIteratorError4 = false;
+	  var _iteratorError4 = undefined;
+
+	  try {
+	    for (var _iterator4 = _list4.entries()[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+	      var _step4$value = _slicedToArray(_step4.value, 2),
+	          k = _step4$value[0],
+	          v = _step4$value[1];
+
+	      console.log('entries', k, v);
+	    }
+	  } catch (err) {
+	    _didIteratorError4 = true;
+	    _iteratorError4 = err;
+	  } finally {
+	    try {
+	      if (!_iteratorNormalCompletion4 && _iterator4.return) {
+	        _iterator4.return();
+	      }
+	    } finally {
+	      if (_didIteratorError4) {
+	        throw _iteratorError4;
+	      }
+	    }
+	  }
+
+	  _list4.forEach(function (item) {
+	    console.log(item);
+	  });
+	}
+
+	{
+	  // weakSet key只能是对象   且是弱引用 就是引用地址 而不是完全拷贝值   不能遍历
+	  var weak = new WeakSet();
+
+	  var _key = {};
+
+	  weak.add(_key, 132);
+	}
+
+	{
+	  // Map数据类型  键可以是任意类型
+	  var map = new Map();
+
+	  var _arr2 = [123];
+
+	  map.set(_arr2, 789); // key val
+
+	  console.log(map, map.get(_arr2));
+	}
+
+	{
+	  // map 第二种定义方式
+	  var _map = new Map([['a', 123], ['b', 456]]); // 以键值对的方式
+
+	  console.log(_map);
+	  console.log(_map.set('c', 789));
+	  console.log(_map.delete('a'));
+	  console.log(_map);
+	  _map.clear();
+	  console.log(_map);
+
+	  // Map  的遍历和 set 一样
+	}
+
+	{
+	  // 区别和  weakSet 一样
+	  var weakMap = new WeakMap();
 	}
 
 /***/ })

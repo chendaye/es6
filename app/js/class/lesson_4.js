@@ -53,3 +53,74 @@
     console.log('es6', code);
   }
 }
+
+
+
+
+{
+  let string = 'string';
+
+  // 包含
+  console.log('include', string.includes('t'));
+
+  // 起始
+  console.log('start', string.startsWith('g'));
+
+  // 结束
+  console.log('end', string.endsWith('ng'));
+
+
+}
+
+
+{
+  let str = 'abc';
+  // 复制字符串
+  console.log(str.repeat(10));
+}
+
+
+
+{
+  // 模板字符串
+
+  let name = 'chendaye666';
+  let say = 'hellow word';
+
+  // 模板字符串用反引号
+  let  model = `i'am is ${name}, i want to say ${say}`
+  console.log(model);
+}
+
+
+{
+  // 补白
+  console.log('1'.padStart(2,'0'));   // '01'
+  console.log('1'.padEnd(2,'0'));  // '10'
+}
+
+
+{
+  let user = {
+    name:'chendaye666',
+    say:'hellow word'
+  };
+
+  function abc(a, b, c){
+    console.log(a);  // Array [ "i am ", " i want to say ", "" ]
+    console.log(b);  // chendaye666
+    console.log(c);  // hellow word
+    return a+b+c;
+  }
+
+  let ret = abc`i am ${user.name} i want to say ${user.say}`
+
+  console.log(ret);  // i am , i want to say ,chendaye666hellow word
+}
+
+
+
+{
+  console.log(String.raw`Hi\n${1+2}`);  // Hi\n3  raw 会自动转义特殊字符
+  console.log(`Hi\n${1+2}`);
+}
