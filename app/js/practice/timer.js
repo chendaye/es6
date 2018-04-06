@@ -1,11 +1,19 @@
 class Timer{
+
+  /**
+   * [countDown 倒计时方法]
+   * @param  {[type]} end    [description]
+   * @param  {[type]} update [description]
+   * @param  {[type]} handle [description]
+   * @return {[type]}        [description]
+   */
   countDown(end, update, handle){
     // 当前时间
     const now = new Date().getTime();
     // 自身引用
     const self = this;
 
-    if(now - end){
+    if(now - end > 0){
       // 超过截止时间
       handle.call(self);
     }else{
@@ -22,7 +30,7 @@ class Timer{
       const px_m = 60 * 1000;
 
       // 一秒钟是多少毫秒
-      const ps_s = 1000;
+      const px_s = 1000;
 
       // 剩余天数
       let d = Math.floor(left_time / px_d);  //取整
@@ -39,19 +47,19 @@ class Timer{
       let time = [];
 
       if(d > 0){
-        time.push(`<em>{d}</em>天`)
+        time.push(`<em>${d}</em>天`)
       }
 
       if(time.length > 0 || h > 0){
-        time.push(`<em>{h}</em>时`)
+        time.push(`<em>${h}</em>时`)
       }
 
       if(time.length > 0 || m > 0){
-        time.push(`<em>{m}</em>分`)
+        time.push(`<em>${m}</em>分`)
       }
 
       if(time.length > 0 || s > 0){
-        time.push(`<em>{s}</em>秒`)
+        time.push(`<em>${s}</em>秒`)
       }
 
       // 剩余时间保存在属性中

@@ -64,7 +64,7 @@ const mix = function(...minins){
     // 把类 mix的属性 复制给 Mix ，就是 copy一样的 ，给 Mix设置一样的属性
     copyProperties(Mix, mix);
     // 原型对象的拷贝
-    copyProperties(Mix.prototype, min.prototype);
+    copyProperties(Mix.prototype, mix.prototype);
   }
 
   return Mix;
@@ -113,6 +113,7 @@ class Practice extends mix(Base, Calculate, Timer, Interface) {
     // 默认玩法
     this.cur_play = 'r5';
 
+
     this.initPlayList();
     this.initNumber();
     this.updateState();
@@ -128,6 +129,7 @@ class Practice extends mix(Base, Calculate, Timer, Interface) {
     // 当前对象引用
     let self = this;
 
+    // Promise 异步操作  其实就会两步操作  先执行  getStatus  的 基本操作(第一步操作)  然后看成功与否 执行第二步异步操作 then
     this.getStatus().then(function(res){
       // 更新期号
       self.issue = res.issue;
@@ -141,7 +143,7 @@ class Practice extends mix(Base, Calculate, Timer, Interface) {
       // 更新页面开奖号码
       $(self.issue_el).text(res.issue);
 
-      self.countdown(res, end_time, function(time){
+      self.countDown(res.end_time, function(time){
         // 更新倒计时时间
         $(self.countdown_el).html(time);
       }, function(){
@@ -164,7 +166,7 @@ class Practice extends mix(Base, Calculate, Timer, Interface) {
   }
 
   /**
-   * [initEvent 初始化事件]
+   * [initEvent 绑定事件事件]
    * @return {[type]} [description]
    */
   initEvent(){
@@ -183,7 +185,7 @@ class Practice extends mix(Base, Calculate, Timer, Interface) {
     $('.dxjo').on('click', 'li', self.assistHandle.bind(self));
 
     // 随机号码
-    $('qkmethod').on('click', '.btn-middle', self.getRandomCode.bind(self));
+    $('.qkmethod').on('click', '.btn-middle', self.getRandomCode.bind(self));
   }
 }
 

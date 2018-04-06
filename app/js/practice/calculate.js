@@ -6,7 +6,7 @@ class Calculate{
    * @param  {[type]} play_type [当前的玩法标识]
    * @return {[type]}           [当前玩法选中的注数]
    */
-  computerCount(active, play_type){
+  computeCount(active, play_type){
     let count = 0;
     // 是否存在这种玩法
     const exist = this.play_list.has(play_type);
@@ -17,7 +17,7 @@ class Calculate{
     // 玩法是以 R开头
     if(exist && play_type.at(0) == 'r'){
       // 如果玩法存在 计算注数
-      count = Calculate.combine(arr, play_type.split('')[1]);
+      count = Calculate.combine(arr, play_type.split('')[1]).length;
     }
 
     // 返回注数

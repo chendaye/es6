@@ -61,6 +61,62 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	// // index.js  是app的入口文件
+	//
+	// import './class/lesson_1';
+	// import './class/lesson_2';
+	// import './class/lesson_3';
+	//
+	var syy = new _practice2.default();
+	// import './class/lesson_4';
+	//
+	// import './class/lesson_5';
+	// import './class/lesson_6';
+	// import './class/lesson_7';
+	// import './class/lesson_8';
+	// import './class/lesson_9';
+	// import './class/lesson_10';
+	// import './class/lesson_11';
+	// import './class/lesson_12';
+	// import './class/lesson_13';
+	// import './class/lesson_14';
+	// import './class/lesson_15';
+	// import './class/lesson_16';
+	// import './class/lesson_17';
+
+
+	// import {variable, first, Test} from  './class/lesson_17';
+	//
+	// console.log(variable, first, Test);
+
+
+	// import {variable} from  './class/lesson_17';
+	//
+	// console.log(variable);
+
+
+	// import * as lesson from  './class/lesson_17';
+	//
+	// console.log(lesson.variable, lesson.first, lesson.Test);
+
+	// import lesson from  './class/lesson_17';
+	//
+	// console.log(lesson.a, lesson.fun);
+
+
+	/**
+	 * 本质上
+	 * javascrit  面向对象编程
+	 * 就是把 一个个小功能 写成函数
+	 * 进一步包装成类
+	 *
+	 * 页面操作就是 dom操作 鼠疫javascript 的另一部分
+	 * dom操作 封装的很好的一个库 就是 jquery
+	 */
+
+
+	console.log(syy);
+
 /***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -9332,7 +9388,7 @@
 	      // 把类 mix的属性 复制给 Mix ，就是 copy一样的 ，给 Mix设置一样的属性
 	      copyProperties(Mix, _mix);
 	      // 原型对象的拷贝
-	      copyProperties(Mix.prototype, min.prototype);
+	      copyProperties(Mix.prototype, _mix.prototype);
 	    }
 	  } catch (err) {
 	    _didIteratorError2 = true;
@@ -9424,6 +9480,7 @@
 	      // 当前对象引用
 	      var self = this;
 
+	      // Promise 异步操作  其实就会两步操作  先执行  getStatus  的 基本操作(第一步操作)  然后看成功与否 执行第二步异步操作 then
 	      this.getStatus().then(function (res) {
 	        // 更新期号
 	        self.issue = res.issue;
@@ -9437,7 +9494,7 @@
 	        // 更新页面开奖号码
 	        (0, _jquery2.default)(self.issue_el).text(res.issue);
 
-	        self.countdown(res, end_time, function (time) {
+	        self.countDown(res.end_time, function (time) {
 	          // 更新倒计时时间
 	          (0, _jquery2.default)(self.countdown_el).html(time);
 	        }, function () {
@@ -9458,7 +9515,7 @@
 	    }
 
 	    /**
-	     * [initEvent 初始化事件]
+	     * [initEvent 绑定事件事件]
 	     * @return {[type]} [description]
 	     */
 
@@ -9480,7 +9537,7 @@
 	      (0, _jquery2.default)('.dxjo').on('click', 'li', self.assistHandle.bind(self));
 
 	      // 随机号码
-	      (0, _jquery2.default)('qkmethod').on('click', '.btn-middle', self.getRandomCode.bind(self));
+	      (0, _jquery2.default)('.qkmethod').on('click', '.btn-middle', self.getRandomCode.bind(self));
 	    }
 	  }]);
 
@@ -19874,13 +19931,22 @@
 
 	  _createClass(Timer, [{
 	    key: 'countDown',
+
+
+	    /**
+	     * [countDown 倒计时方法]
+	     * @param  {[type]} end    [description]
+	     * @param  {[type]} update [description]
+	     * @param  {[type]} handle [description]
+	     * @return {[type]}        [description]
+	     */
 	    value: function countDown(end, update, handle) {
 	      // 当前时间
 	      var now = new Date().getTime();
 	      // 自身引用
 	      var self = this;
 
-	      if (now - end) {
+	      if (now - end > 0) {
 	        // 超过截止时间
 	        handle.call(self);
 	      } else {
@@ -19897,7 +19963,7 @@
 	        var px_m = 60 * 1000;
 
 	        // 一秒钟是多少毫秒
-	        var ps_s = 1000;
+	        var px_s = 1000;
 
 	        // 剩余天数
 	        var d = Math.floor(left_time / px_d); //取整
@@ -19914,19 +19980,19 @@
 	        var time = [];
 
 	        if (d > 0) {
-	          time.push('<em>{d}</em>\u5929');
+	          time.push('<em>' + d + '</em>\u5929');
 	        }
 
 	        if (time.length > 0 || h > 0) {
-	          time.push('<em>{h}</em>\u65F6');
+	          time.push('<em>' + h + '</em>\u65F6');
 	        }
 
 	        if (time.length > 0 || m > 0) {
-	          time.push('<em>{m}</em>\u5206');
+	          time.push('<em>' + m + '</em>\u5206');
 	        }
 
 	        if (time.length > 0 || s > 0) {
-	          time.push('<em>{s}</em>\u79D2');
+	          time.push('<em>' + s + '</em>\u79D2');
 	        }
 
 	        // 剩余时间保存在属性中
@@ -19967,7 +20033,7 @@
 	  }
 
 	  _createClass(Calculate, [{
-	    key: 'computerCount',
+	    key: 'computeCount',
 
 
 	    /**
@@ -19976,7 +20042,7 @@
 	     * @param  {[type]} play_type [当前的玩法标识]
 	     * @return {[type]}           [当前玩法选中的注数]
 	     */
-	    value: function computerCount(active, play_type) {
+	    value: function computeCount(active, play_type) {
 	      var count = 0;
 	      // 是否存在这种玩法
 	      var exist = this.play_list.has(play_type);
@@ -19987,7 +20053,7 @@
 	      // 玩法是以 R开头
 	      if (exist && play_type.at(0) == 'r') {
 	        // 如果玩法存在 计算注数
-	        count = Calculate.combine(arr, play_type.split('')[1]);
+	        count = Calculate.combine(arr, play_type.split('')[1]).length;
 	      }
 
 	      // 返回注数
@@ -20214,7 +20280,7 @@
 
 	      return new Promise(function (resolve, reject) {
 	        _jquery2.default.ajax({
-	          url: '/get/status',
+	          url: '/get/state',
 	          data: {
 	            issue: issue
 	          },

@@ -78,7 +78,7 @@ class Interface{
 
     return new Promise((resolve, reject) => {
       $.ajax({
-        url:'/get/status',
+        url:'/get/state',
         data:{
           issue:issue
         },

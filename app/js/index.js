@@ -53,3 +53,7 @@ import 'babel-polyfill';
  * dom操作 封装的很好的一个库 就是 jquery
  */
 import practice from './practice'
+
+const syy = new practice();
+
+console.log(syy);
