@@ -28,25 +28,26 @@ Es6项目构建
 
 
 编译工具（babel webpack）
-  babel： js 的编译器  es6不能直接在浏览器中运行 需要编译
+  babel： js 的编译器  es6不能直接在浏览器中运行 需要编译成 es5 或者更低的版本
   webpack: 解决模块化的工具
-  webpack-stream: webpack 对 gulp的支持
+  webpack-stream: webpack 对 gulp的支持 （解决模块化依赖）
 
 
 
 
 代码实现
-  完成目录结构
-    app： 项目文件
+  完成目录结构 （app server tasks 三个平级的目录 代表了一个前端项目的三个部分）
+    app： 项目文件 (项目实际编写的代码)
 
-    server： 服务器代码
+    server： 服务器代码（将app中的相关代码编译成服务器可以执行的代码，进行开发环境测试）
 
-    tasks: 自动构建脚本
+    tasks: 自动构建脚本（自动进行文件的监听 编译等工作）
 
-    .babelrc 文件 babel编译需要的文件
-    gulpfile.babel.js   gulp 配置文件（因为使用了es6  所以是 bable.js）
+    .babelrc 文件 ： babel编译需要的文件
+    gulpfile.babel.js ：  gulp 配置文件（因为使用了es6  所以是 bable.js）
+    package.json : npm init (依赖配置文件)
 
-  自动构建
+  自动构建（gulp 用node写的， gulp中文网自学）
 
   tasks/util/arg.js  脚本：  创建 gulp 参数
   tasks/scripts.js   脚本：  处理js的脚本  打开文件->错误处理->重命名->编译->编译文件放入指定文件夹->重命名->压缩->压缩文件放入指定文件夹->热更新
@@ -59,7 +60,12 @@ Es6项目构建
   tasks/build.js     脚本：  用各个脚本构建任务
   task/default.js    脚本：  创建gulp默认执行的脚本（任务）
 
-  服务器搭建
+  服务器搭建（都是基于 node ；  node相当于后端的 lamp lnmp）
+  express -e .  搭建服务器， express是node实现的一个服务器脚手架工具
+
+  -e : 使用ejs模板引擎
+  ， ： 在当前目录
+
   要实现热更新 要修改 server/app.js  在特定位置加一个 热更新
   启动 gulp --watch
 
