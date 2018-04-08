@@ -55,7 +55,7 @@ Es6项目构建
   tasks/css.js       脚本：  处理css   同处理模板文件一样  拷贝 热更新
   tasks/server.js    脚本：  处理服务器的脚本
   task/browser.js    脚本：  处理浏览器监听 监听app目录的变化  自动调用 对应脚本处理任务  （自动调用  screpts.js  pages.js  css.js  针对app相应文件做对应处理）
-  tasks/clead.js     脚本：  因为每次app的文件变化都要重新拷贝到server目录 所以开呗之前要先清空server中旧的拷贝文件
+  tasks/clean.js     脚本：  因为每次app的文件变化都要重新拷贝到server目录 所以开呗之前要先清空server中旧的拷贝文件
 
   tasks/build.js     脚本：  用各个脚本构建任务
   task/default.js    脚本：  创建gulp默认执行的脚本（任务）
