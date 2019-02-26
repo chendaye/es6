@@ -75,7 +75,7 @@
 
   ajax(70).then(function(){
     console.log('666');
-  }).catch(function(eror){
+  }).catch(function(error){
       console.log(error);
   });
 

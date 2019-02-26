@@ -17,7 +17,6 @@
 
 
 {
-
   // iterator  与 genertaor
   let obj = {};
   obj[Symbol.iterator] = function* (){
