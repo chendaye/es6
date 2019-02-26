@@ -49,7 +49,7 @@ import 'babel-polyfill';
  * 就是把 一个个小功能 写成函数
  * 进一步包装成类
  *
- * 页面操作就是 dom操作 鼠疫javascript 的另一部分
+ * 页面操作就是 dom操作 属于javascript 的另一部分
  * dom操作 封装的很好的一个库 就是 jquery
  */
 import practice from './practice'

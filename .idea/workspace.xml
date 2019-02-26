@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="952f004c-330c-4dcf-a318-b6dc8886d542" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Readme" beforeDir="false" afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/js.test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/1、变量声明.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_10.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/10、set-map数据类型.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_11.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/11、Proxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_12.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/12、类.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_13.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/13、异步回调.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_14.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/14、iterator接口.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_15.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/15、genertaor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_16.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/16、修饰器.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_17.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_17.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/17、export.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/2、解构赋值.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/3、正则匹配.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_4.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/4、字符串.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_5.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/5、数字.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_6.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/6、数组.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_7.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/7、函数.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_8.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/8、对象.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/class/lesson_9.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/class/9、唯一值.js" afterDir="false" />
-    </list>
+    <list default="true" id="952f004c-330c-4dcf-a318-b6dc8886d542" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/Readme">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="236">
-              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
             </state>
           </provider>
         </entry>
@@ -152,6 +131,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vue" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -178,12 +158,12 @@
       <option name="presentableId" value="Default" />
       <updated>1551073545293</updated>
       <workItem from="1551073547066" duration="4555000" />
-      <workItem from="1551159556634" duration="5743000" />
+      <workItem from="1551159556634" duration="5894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10298000" />
+    <option name="totallyTimeSpent" value="10449000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -304,7 +284,7 @@
     <entry file="file://$PROJECT_DIR$/Readme">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
-          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
         </state>
       </provider>
     </entry>
